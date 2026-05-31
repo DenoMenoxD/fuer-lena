@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Für Lena 💖</title>
+<title>Für Lena 🐱💖</title>
 
 <style>
 *{box-sizing:border-box}
@@ -12,75 +12,226 @@ body{
     margin:0;
     min-height:100vh;
     font-family:Arial, sans-serif;
-    background:radial-gradient(circle at top,#ffe1f0,#ff9ecb,#8b5cf6);
+    background:
+        radial-gradient(circle at top left,#fff1f8,#ffd6e8 35%,#c4a7ff 100%);
     display:flex;
     justify-content:center;
     align-items:center;
     overflow:hidden;
+    color:#4b2c5e;
 }
 
 .card{
-    width:90%;
-    max-width:520px;
-    background:rgba(255,255,255,0.92);
+    width:92%;
+    max-width:540px;
+    background:rgba(255,255,255,0.94);
     border-radius:35px;
-    padding:35px;
+    padding:30px;
     text-align:center;
-    box-shadow:0 25px 60px rgba(0,0,0,0.25);
+    box-shadow:0 25px 70px rgba(80,40,120,0.28);
     position:relative;
     z-index:2;
+    border:3px solid rgba(255,182,213,0.8);
 }
 
 h1{
-    color:#ff3d8b;
+    color:#ff4fa3;
     font-size:38px;
-    margin-bottom:10px;
+    margin:8px 0 12px;
 }
 
-.subtitle{
+p{
     font-size:18px;
-    color:#555;
     line-height:1.6;
+    color:#5c4a66;
 }
 
-.question{
-    margin-top:25px;
-    font-size:24px;
-    font-weight:bold;
-    color:#7c3aed;
-}
-
-.buttons{
-    margin-top:30px;
-    height:90px;
+.cat{
+    width:190px;
+    height:150px;
+    margin:0 auto 15px;
     position:relative;
+    animation:shyBounce 2.2s infinite ease-in-out;
 }
 
-button{
+@keyframes shyBounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+.face{
+    width:150px;
+    height:120px;
+    background:#fff;
+    border-radius:50%;
+    position:absolute;
+    left:20px;
+    top:25px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.12);
+    border:3px solid #ffd1e5;
+}
+
+.ear{
+    width:55px;
+    height:55px;
+    background:#fff;
+    position:absolute;
+    top:12px;
+    border-radius:12px;
+    transform:rotate(45deg);
+    border:3px solid #ffd1e5;
+}
+
+.ear.left{left:28px}
+.ear.right{right:28px}
+
+.inner-ear{
+    width:27px;
+    height:27px;
+    background:#ffbdd9;
+    position:absolute;
+    top:16px;
+    left:13px;
+    border-radius:8px;
+}
+
+.eye{
+    width:15px;
+    height:20px;
+    background:#3d2b45;
+    border-radius:50%;
+    position:absolute;
+    top:52px;
+}
+
+.eye.left{left:48px}
+.eye.right{right:48px}
+
+.blush{
+    width:22px;
+    height:10px;
+    background:#ffb5d3;
+    border-radius:50%;
+    position:absolute;
+    top:76px;
+    opacity:.8;
+}
+
+.blush.left{left:28px}
+.blush.right{right:28px}
+
+.nose{
+    width:12px;
+    height:9px;
+    background:#ff7eb8;
+    border-radius:50%;
+    position:absolute;
+    left:69px;
+    top:73px;
+}
+
+.mouth{
+    position:absolute;
+    left:68px;
+    top:84px;
+    font-size:17px;
+    color:#5c4a66;
+}
+
+.bow{
+    position:absolute;
+    top:0;
+    left:70px;
+    width:52px;
+    height:38px;
+    z-index:3;
+}
+
+.bow:before,
+.bow:after{
+    content:"";
+    position:absolute;
+    width:28px;
+    height:28px;
+    background:#ff5fa8;
+    border-radius:50% 50% 50% 10%;
+    top:5px;
+}
+
+.bow:before{
+    left:0;
+    transform:rotate(35deg);
+}
+
+.bow:after{
+    right:0;
+    transform:rotate(-35deg);
+}
+
+.bow span{
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:#ff2f86;
+    border-radius:50%;
+    left:17px;
+    top:10px;
+    z-index:4;
+}
+
+.screen{
+    display:none;
+}
+
+.screen.active{
+    display:block;
+}
+
+.btn{
     border:none;
     padding:15px 28px;
     border-radius:30px;
     font-size:18px;
     cursor:pointer;
     transition:0.25s;
+    margin-top:16px;
+}
+
+.primary{
+    background:#ff4fa3;
+    color:white;
+    box-shadow:0 10px 25px rgba(255,79,163,0.35);
+}
+
+.primary:hover{
+    transform:scale(1.07);
+}
+
+.question{
+    margin-top:15px;
+    font-size:25px;
+    font-weight:bold;
+    color:#7c3aed;
+}
+
+.buttons{
+    margin-top:28px;
+    height:95px;
+    position:relative;
 }
 
 #yes{
-    background:#ff3d8b;
+    background:#ff4fa3;
     color:white;
-    box-shadow:0 8px 20px rgba(255,61,139,0.4);
-}
-
-#yes:hover{
-    transform:scale(1.08);
+    box-shadow:0 8px 22px rgba(255,79,163,0.4);
 }
 
 #no{
     background:white;
-    color:#ff3d8b;
-    border:2px solid #ff3d8b;
+    color:#ff4fa3;
+    border:2px solid #ff4fa3;
     position:absolute;
-    left:55%;
+    left:56%;
     top:0;
 }
 
@@ -89,32 +240,27 @@ button{
     margin-top:25px;
     padding:20px;
     border-radius:25px;
-    background:#ffe4f1;
+    background:#ffe4f2;
     color:#ff2f86;
     font-size:22px;
     font-weight:bold;
 }
 
-.heart{
+.float{
     position:absolute;
-    animation:float 6s linear forwards;
+    animation:floatUp 6s linear forwards;
     z-index:1;
 }
 
-@keyframes float{
+@keyframes floatUp{
     from{transform:translateY(110vh) rotate(0deg);opacity:1}
-    to{transform:translateY(-120px) rotate(360deg);opacity:0}
+    to{transform:translateY(-130px) rotate(360deg);opacity:0}
 }
 
-.sparkle{
-    position:absolute;
-    color:white;
-    animation:blink 2s infinite alternate;
-}
-
-@keyframes blink{
-    from{opacity:.2;transform:scale(.8)}
-    to{opacity:1;transform:scale(1.3)}
+.paris{
+    font-size:15px;
+    color:#9b6bb8;
+    margin-top:8px;
 }
 </style>
 </head>
@@ -122,69 +268,113 @@ button{
 <body>
 
 <div class="card">
-    <h1>Hey Lena 🌸</h1>
 
-    <p class="subtitle">
-        Ich habe diese kleine Seite nur für dich gemacht.  
-        Weil du süß bist und weil ich dich gerne zum Lächeln bringen wollte. 💖
-    </p>
+    <div class="screen active" id="intro">
+        <div class="cat">
+            <div class="ear left"><div class="inner-ear"></div></div>
+            <div class="ear right"><div class="inner-ear"></div></div>
+            <div class="bow"><span></span></div>
+            <div class="face">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+                <div class="nose"></div>
+                <div class="mouth">ω</div>
+            </div>
+        </div>
 
-    <div class="question">
-        Willst du am Dienstag mit mir Sushi essen gehen? 🍣✨
+        <h1>Bonjour Lena 🐱</h1>
+
+        <p>
+            Eine kleine schüchterne Katze hat eine Nachricht für dich...  
+            und sie ist ein bisschen nervös. 👉👈
+        </p>
+
+        <div class="paris">Paris-Vibes, rosa Schleife und ganz viel Mut 💖</div>
+
+        <button class="btn primary" onclick="showQuestion()">Nachricht öffnen 💌</button>
     </div>
 
-    <div class="buttons">
-        <button id="yes" onclick="sayYes()">Ja 💕</button>
-        <button id="no" onmouseover="moveNo()" onclick="moveNo()">Nein 🙈</button>
+    <div class="screen" id="questionScreen">
+        <h1>Hey Lena 🌸</h1>
+
+        <p>
+            Ich wollte dich eigentlich nur auf eine süße Art fragen...
+        </p>
+
+        <div class="question">
+            Willst du am Dienstag mit mir Sushi essen gehen? 🍣✨
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="yes" onclick="sayYes()">Ja 💕</button>
+            <button class="btn" id="no" onmouseover="moveNo()" onclick="moveNo()">Nein 🙈</button>
+        </div>
+
+        <div class="result" id="result">
+            Jaaaa! 😍 Dann ist Dienstag offiziell Sushi-Date-Tag 🍣💖
+        </div>
     </div>
 
-    <div class="result" id="result">
-        Jaaaa! 😍 Dann ist Dienstag offiziell Sushi-Date-Tag 🍣💖
-    </div>
 </div>
 
 <script>
 const noBtn = document.getElementById("no");
+let noCount = 0;
+
+function showQuestion(){
+    document.getElementById("intro").classList.remove("active");
+    document.getElementById("questionScreen").classList.add("active");
+}
 
 function sayYes(){
     document.getElementById("result").style.display = "block";
     document.querySelector(".question").innerHTML = "Beste Entscheidung des Tages 😌🍣";
+    noBtn.style.display = "none";
+
+    for(let i=0;i<35;i++){
+        setTimeout(createFloat, i * 40);
+    }
 }
 
 function moveNo(){
-    const x = Math.random() * 260 - 120;
+    noCount++;
+
+    const texts = [
+        "Nein 🙈",
+        "Sicher? 🥺",
+        "Wirklich? 😭",
+        "Sushi wird traurig 🍣💔",
+        "Ich lauf weg 😌"
+    ];
+
+    noBtn.innerText = texts[Math.min(noCount, texts.length-1)];
+
+    const x = Math.random() * 260 - 130;
     const y = Math.random() * 80 + 5;
 
     noBtn.style.left = "50%";
     noBtn.style.top = y + "px";
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+    if(noCount > 6){
+        noBtn.style.opacity = "0.35";
+    }
 }
 
-function createHeart(){
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = ["💖","💕","🌸","✨","🍣"][Math.floor(Math.random()*5)];
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.fontSize = (Math.random()*24+18) + "px";
-    document.body.appendChild(heart);
+function createFloat(){
+    const item = document.createElement("div");
+    item.className = "float";
+    item.innerHTML = ["💖","💕","🌸","✨","🐾","🍣","🎀"][Math.floor(Math.random()*7)];
+    item.style.left = Math.random()*100 + "vw";
+    item.style.fontSize = (Math.random()*24+18) + "px";
+    document.body.appendChild(item);
 
-    setTimeout(()=>heart.remove(),6000);
+    setTimeout(()=>item.remove(),6000);
 }
 
-function createSparkle(){
-    const s = document.createElement("div");
-    s.className = "sparkle";
-    s.innerHTML = "✨";
-    s.style.left = Math.random()*100 + "vw";
-    s.style.top = Math.random()*100 + "vh";
-    s.style.fontSize = (Math.random()*18+12) + "px";
-    document.body.appendChild(s);
-
-    setTimeout(()=>s.remove(),3000);
-}
-
-setInterval(createHeart,300);
-setInterval(createSparkle,700);
+setInterval(createFloat,420);
 </script>
 
 </body>
